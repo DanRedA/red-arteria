@@ -1,0 +1,72 @@
+[
+	{
+		"index": "0",
+		"id": "01",
+		"title": "Agua",
+		"cover": "/covers/cover1.jpg",
+		"src": "/tracks/Agua.mp3",
+		"artist": "Red Arteria",
+		"album": "Demo 2021",
+		"time": "3:05"
+	},
+	{
+		"index": "0",
+		"id": "01",
+		"title": "Cero",
+		"cover": "/covers/cover2.jpg",
+		"src": "https://frentelocal.com/wp-content/uploads/2024/02/Zero-Master.mp3",
+		"artist": "Red Arteria",
+		"album": "Demo 2021",
+		"time": "3:35"
+	},
+	{
+		"index": "2",
+		"id": "03",
+		"title": "Cuarto Blanco",
+		"cover": "/covers/cover3.jpg",
+		"src": "/tracks/cuarto-blanco.mp3",
+		"artist": "Red Arteria",
+		"album": "Demo 2021",
+		"time": "5:03"
+	},
+	{
+		"index": "3",
+		"id": "04",
+		"title": "Entre Líneas",
+		"cover": "/covers/cover4.jpg",
+		"src": "/tracks/Entre-lineas.mp3",
+		"artist": "Red Arteria",
+		"album": "Demo 2021",
+		"time": "2:36"
+	},
+	{
+		"index": "4",
+		"id": "05",
+		"title": "Madamme Sin Nombre",
+		"cover": "/covers/cover5.jpg",
+		"src": "/tracks/madamme.mp3",
+		"artist": "Red Arteria",
+		"album": "Demo 2021",
+		"time": "3:54"
+	},
+	{
+		"index": "5",
+		"id": "06",
+		"title": "Fase",
+		"cover": "/covers/cover6.jpg",
+		"src": "/tracks/Fase.mp3",
+		"artist": "Red Arteria",
+		"album": "Demo 2021",
+		"time": "3:17"
+	},
+	{
+		"index": "6",
+		"id": "07",
+		"title": "Epílogo",
+		"cover": "/covers/cover7.jpg",
+		"src": "/tracks/Epilogo.mp3",
+		"artist": "Red Arteria",
+		"album": "Demo 2021",
+		"time": "4:21"
+	}
+]

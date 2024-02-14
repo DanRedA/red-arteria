@@ -1,0 +1,440 @@
+---
+// import TrackList from './TrackList.astro';
+import tracks from '../../data/tracks.json';
+---
+
+<section id="a-player">
+	<img id="cover" src="/covers/curvas-cover.jpg" alt="red-arteria cover">
+
+<!-- 	<div class="progress-bar">
+		<progress id="song-progress" value="100" max="100"></progress>
+		<div class="song-duration">
+			<small id="currrent-time">0:00</small>
+			<small id="total-time">5:00</small>
+		</div>
+	</div> -->
+
+<!-- 	<div class="timeline-slider">
+		<div class="range-slider">
+			<input 
+			    type="range"
+			    min="0" 
+			    max="100" 
+			    value="0" 
+			    class="t-slider" 
+			/>
+		<div class="progress"></div>
+		<div class="slider-thumb"></div>
+		</div>
+		<div class="timeline">
+			<small class="time">0:00</small>
+			<small class="fulltime">0:00</small>
+		</div>
+	</div> -->
+
+	<div class="song-data">
+		<p>RED ARTERIA</p>
+		<small id="artist">Curvas de Luz, ep. 2024</small>
+	</div>
+
+	<div class="player-controls">
+		<div class="controls">
+			<!-- <button id="repeate" class="light">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none"><path d="M0 0v24h24V0H0Zm11.406 23.258l.012.002l.071.035l.02.004l.014-.004l.071-.036c.01-.003.019 0 .024.006l.004.01l.017.428l-.005.02l-.01.013l-.104.074l-.015.004l-.012-.004l-.104-.074l-.012-.016l-.004-.017l.017-.427c.002-.01.009-.017.016-.018Zm-.264-.113l.014.002l.184.093l.01.01l.003.011l-.018.43l-.005.012l-.008.008l-.201.092a.025.025 0 0 1-.029-.008l-.004-.014l.034-.614c.003-.012.01-.02.02-.022Zm.715.002a.023.023 0 0 1 .027.006l.006.014l.034.614c0 .012-.007.02-.017.024l-.015-.002l-.201-.093l-.01-.008l-.003-.011l-.018-.43l.003-.012l.01-.01l.184-.092Z"/><path fill="currentColor" d="M20 9.5a1.5 1.5 0 0 1 1.493 1.356L21.5 11v4a4.5 4.5 0 0 1-4.288 4.495L17 19.5H8.56l-.02.312a21.64 21.64 0 0 1-.011.14c-.056.719-.749 1.17-1.331.865l-.314-.168l-.368-.209a19.716 19.716 0 0 1-.203-.119l-.439-.269a21.11 21.11 0 0 1-.922-.617l-.385-.28l-.323-.245a16.69 16.69 0 0 1-.137-.107c-.489-.39-.47-1.195.05-1.606l.136-.107l.32-.242l.38-.275l.438-.301a21.806 21.806 0 0 1 .714-.457l.426-.255l.375-.211l.316-.17c.577-.3 1.207.085 1.262.756l.038.565H17a1.5 1.5 0 0 0 1.493-1.356L18.5 15v-4A1.5 1.5 0 0 1 20 9.5Zm-3.198-6.317l.314.168l.368.209c.066.038.134.077.203.119l.439.269a21.065 21.065 0 0 1 .922.617l.385.28l.323.245l.137.107c.489.39.47 1.195-.05 1.606l-.136.107l-.32.242l-.38.275a21.485 21.485 0 0 1-1.152.758l-.426.255l-.375.211l-.316.17c-.577.3-1.207-.085-1.261-.756l-.04-.565H7A1.5 1.5 0 0 0 5.5 9v4a1.5 1.5 0 0 1-3 0V9A4.5 4.5 0 0 1 7 4.5h8.44l.031-.452c.056-.719.749-1.17 1.331-.865Z"/></g></svg>
+			</button> -->
+			<div class="controls-play">
+				<!-- style="border:1px solid var(--text2);padding: 10px; border-radius: 50%;" -->
+				<button id="play-pause">
+					<svg class="play" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M24 0v24H0V0h24ZM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018Zm.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01l-.184-.092Z"/><path fill="currentColor" d="M5.669 4.76a1.469 1.469 0 0 1 2.04-1.177c1.062.454 3.442 1.533 6.462 3.276c3.021 1.744 5.146 3.267 6.069 3.958c.788.591.79 1.763.001 2.356c-.914.687-3.013 2.19-6.07 3.956c-3.06 1.766-5.412 2.832-6.464 3.28c-.906.387-1.92-.2-2.038-1.177c-.138-1.142-.396-3.735-.396-7.237c0-3.5.257-6.092.396-7.235Z"/></g></svg>
+					<svg class="pause hide" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none"><path d="M24 0v24H0V0h24ZM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018Zm.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01l-.184-.092Z"/><path fill="currentColor" d="M9 3a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm8 0a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/></g></svg>
+				</button>
+			</div>
+			<div class="controls-title">
+				<div class="controls-nextprev">
+					<button id="prev" class="light">
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M24 0v24H0V0h24ZM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036c-.01-.003-.019 0-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.016-.018Zm.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01l-.184-.092Z"/><path fill="currentColor" d="M12.06 5.94a1.5 1.5 0 0 1 0 2.12L8.122 12l3.94 3.94a1.5 1.5 0 0 1-2.122 2.12l-5-5a1.5 1.5 0 0 1 0-2.12l5-5a1.5 1.5 0 0 1 2.122 0Zm6 0a1.5 1.5 0 0 1 0 2.12L14.122 12l3.94 3.94a1.5 1.5 0 0 1-2.122 2.12l-5-5a1.5 1.5 0 0 1 0-2.12l5-5a1.5 1.5 0 0 1 2.122 0Z"/></g></svg>
+					</button>
+					<p id="title" class="song-title">SONG NAME</p>
+					<button id="next" class="light">
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M24 0v24H0V0h24ZM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036c-.01-.003-.019 0-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.016-.018Zm.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01l-.184-.092Z"/><path fill="currentColor" d="M5.94 5.94a1.5 1.5 0 0 1 2.12 0l5 5a1.5 1.5 0 0 1 0 2.12l-5 5a1.5 1.5 0 0 1-2.12-2.12L9.878 12l-3.94-3.94a1.5 1.5 0 0 1 0-2.12Zm6 0a1.5 1.5 0 0 1 2.12 0l5 5a1.5 1.5 0 0 1 0 2.12l-5 5a1.5 1.5 0 0 1-2.12-2.12L15.878 12l-3.94-3.94a1.5 1.5 0 0 1 0-2.12Z"/></g></svg>
+					</button>
+				</div>
+				<div class="volume-slider">
+					<small>vol.</small>
+					<input type="range" class="slider" min="0" max="100" value="0">
+				</div>
+			</div>
+			<!-- <button id="shuffle" class="light">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none"><path d="M24 0v24H0V0h24ZM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036c-.01-.003-.019 0-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.016-.018Zm.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01l-.184-.092Z"/><path fill="currentColor" d="M6.301 5.5a4.5 4.5 0 0 1 3.732 1.985l.127.2l4.252 7.087a1.5 1.5 0 0 0 1.13.72l.157.008h.741l.02-.312l.011-.14c.056-.719.749-1.17 1.331-.865l.314.168l.368.209a20.468 20.468 0 0 1 1.564 1.005l.385.28l.323.245l.137.107c.489.39.47 1.195-.05 1.606l-.136.107l-.32.242l-.38.275l-.438.301a21.82 21.82 0 0 1-.714.457l-.426.255l-.375.211l-.316.17c-.577.3-1.207-.085-1.261-.756l-.04-.565H15.7a4.5 4.5 0 0 1-3.732-1.985l-.127-.2l-4.252-7.087a1.5 1.5 0 0 0-1.13-.72L6.301 8.5H4a1.5 1.5 0 0 1-.144-2.993L4 5.5h2.301Zm1.007 9.612L7.42 15a1.5 1.5 0 1 1 2.237 2a4.5 4.5 0 0 1-3.113 1.494l-.242.006H4a1.5 1.5 0 0 1-.144-2.993L4 15.5h2.301a1.5 1.5 0 0 0 1.007-.388Zm10.494-10.93l.314.17l.368.208c.132.076.27.159.417.248l.459.29c.25.163.48.32.688.467l.385.28l.323.245l.137.107c.489.39.47 1.195-.05 1.606l-.136.107l-.32.242l-.38.275l-.438.301a21.846 21.846 0 0 1-.714.457l-.426.255l-.375.211l-.316.17c-.577.3-1.207-.085-1.261-.756l-.04-.565H15.7a1.5 1.5 0 0 0-1.007.388L14.58 9a1.5 1.5 0 1 1-2.237-2a4.5 4.5 0 0 1 3.113-1.494l.242-.006h.741l.031-.452c.056-.719.749-1.17 1.331-.865Z"/></g></svg>
+			</button> -->
+		</div>		
+	</div>
+
+	<div id="playlist" class="track-list">
+		<p class="section-title">TRACK LIST</p>
+		<ul class="song-list">
+			{
+				tracks.map((track) => {
+					return (
+						<li
+							class="song-btn"
+							data-index=`${track.index}`
+							data-id=`${track.id}`
+							data-name=`${track.title}`
+							data-cover=`${track.cover}`
+							data-src=`${track.src}`
+							data-artist=`${track.artist}`
+							data-album=`${track.album}`
+							data-time=`${track.time}`
+						>
+							<p>{track.title}</p>
+							<small class="track-time">{track.time}</small>
+						</li>
+					)
+				})
+			}
+		</ul>
+		<audio src="" id="audio"></audio>
+	</div>
+	<div class="player-footer">
+		<small>Red Arteria 2024</small>
+	</div>
+	
+
+</section>
+
+
+<style type="text/css">
+	
+	#a-player {
+		background: var(--black-2);
+		color: var(--white-2);
+		border: 1px solid gray;
+		max-width: 24rem;
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+	.section-title {
+		padding: 1rem 0 0;
+	}
+	/*.progress-bar {
+		margin: -8px 0;
+	}
+	progress[value] {
+		-webkit-appearance: none;
+		appearance: none;
+
+		width: 100%;
+		height: 8px;
+	}
+	.song-duration {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 0 .25rem .75rem .25rem;
+	}
+	.timeline-slider {
+		width: 100%;
+	}
+	.range-slider {
+		position: relative;
+	}
+	.t-slider {
+		-webkit-appearance: none;
+		width: 100%;
+		height: 8px;
+		outline: none;
+		background: gray;
+		cursor: pointer;
+	}
+	.t-slider::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		appearance: none;
+		width: 2px;
+		height: 6px;
+		border: none;
+		border-radius: 0;
+		color: var(--white-3);
+		z-index: 3;
+		position: relative;
+	}
+	.t-slider::-moz-range-thumb {
+		-webkit-appearance:none;
+		appearance: none;
+		width: 2px;
+		height: 6px;
+		border: none;
+		border-radius: 0;
+		color: var(--white-3);
+		z-index: 3;
+		position: relative;
+	}
+	.timeline-slider .slider-thumb {
+		position: absolute;
+	}
+	.progress {
+		width: 50%;
+		height: 8px;
+		background: var(--primary);
+		position: absolute;
+		top: 0px;
+		left: 0;
+		pointer-events: none;
+	}
+	.timeline {
+		display: flex;
+		justify-content: space-between;
+		padding: 0.25rem;
+		color: var(--white-3);
+	}*/
+	.song-data {
+		padding: 1rem 0 1rem;
+		border-top: 1px solid gray;
+		border-bottom: 1px solid gray;
+		background: #000;
+	}
+	.player-controls {
+		width: 100%;
+		margin: 0 auto; 
+		padding: 0 .25rem;
+		border-bottom: 1px solid gray;
+	}
+	.controls {
+		width: 100%;
+		padding: .75rem 0.25rem;
+		display: flex;
+		gap: .25rem;
+		justify-content: space-between;
+		color: var(--white-1);
+	}
+	.controls button {
+		cursor: pointer;
+	}
+	.controls button:hover {
+		color: var(--primary);
+	}
+	.controls-play {
+		flex-basis: 54px;
+		padding: 10px;
+	}
+	.controls-title {
+		flex-basis: 83%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.controls-nextprev {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.controls-nextprev button {
+		flex-basis: 32px;
+	}
+	.controls-nextprev p {
+		flex-grow: 12;
+		color: var(--primary);
+		font-weight: bold;
+	}
+	.volume-slider {
+		width: 98%;
+		padding-bottom: .25rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.slider {
+		-webkit-appearance: none;
+		appearance: none;
+		flex-basis: 90%;
+		height: 6px;
+		background: gray;
+		opacity: 1;
+		outline: none;
+		-webkit-transition: 0.2s;
+		transition: .2;
+	}
+	.slider::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		appearance: none;
+		width: 18px;
+		border-radius: 0;
+		height: 6px;
+		background: var(--white-3);
+		cursor: pointer;
+		opacity: 100%;
+		border: none;
+	}
+	.slider::-moz-range-thumb {
+		width: 18px;
+		border-radius: 0;
+		height: 6px;
+		background: var(--white-3);
+		cursor: pointer;
+		opacity: 100%;
+		border: none;
+	}
+	.volume-slider small {
+		font-weight: bold;
+	}
+	.track-list {
+		width: 95%;
+		display: flex;
+		flex-direction: column;
+		margin: 0 auto 0;
+	}
+	.song-btn {
+		width: 100%;
+		padding: .35rem;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.song-btn p {
+		cursor: pointer;
+		font-size: 1rem;
+	}
+	.song-btn p:hover {
+		font-weight: bold;
+		color: var(--primary);
+	}
+	.song-list {
+		padding: 0.5rem;
+	}
+	.song-list li.active p {
+		font-weight: bold;
+		color: var(--primary);
+	}
+
+	.track-time {
+		color: var(--white-1);
+	}
+	.player-footer {
+		padding: .5rem;
+		border-top: 1px solid gray;
+		background: #000;
+		color: #fff;
+	}
+	.hide {
+		display: none;
+	}
+	.light {
+/*		opacity: 50%;*/
+		color: var(--white-3);
+	}
+</style>
+
+<script is:inline>
+
+	const audio = document.querySelector('#audio');
+	const playPauseBtn = document.querySelector('#play-pause');
+	const prevBtn = document.querySelector('#prev');
+	const nextBtn = document.querySelector('#next');
+	const songList = document.querySelector('.song-list');
+	const title = document.querySelector('#title');
+	const cover = document.querySelector('#cover');
+	const volSlider = document.querySelector('.slider');
+	const timeSlider = document.querySelector('.t-slider');
+	const timeprogress = document.querySelector('.progress');
+	const time = document.querySelector('.time');
+	const fulltime = document.querySelector('.fulltime');
+
+	let songArray = [];
+	let songHeading = '';
+	let songIndex = 0;
+	let isPlaying = false;
+
+	function loadAudio() {
+		audio.src = songArray[songIndex];
+
+		let songListItems = songList.getElementsByTagName('li');
+		songHeading = songListItems[songIndex].getAttribute('data-name');
+		title.innerText = songHeading;
+
+		// highlight
+		for(i=0; i<songListItems.length;i++) {
+			songListItems[i].classList.remove('active');
+		}
+
+		songList.getElementsByTagName('li')[songIndex].classList.add('active');
+	}
+
+	function loadSongs(){
+		let songs = songList.getElementsByTagName('li');
+		for(i=0;i<songs.length;i++){
+			songArray.push(songs[i].getAttribute('data-src'));
+		};
+
+		loadAudio();
+	}
+
+	loadSongs();
+
+	function playAudio() {
+		audio.play();
+		playPauseBtn.querySelector('.play').classList.add('hide');
+		playPauseBtn.querySelector('.pause').classList.remove('hide');
+		isPlaying = true;
+	}
+
+	function pauseAudio() {
+		audio.pause();
+		playPauseBtn.querySelector('.pause').classList.add('hide');
+		playPauseBtn.querySelector('.play').classList.remove('hide');
+		isPlaying = false;
+	}
+
+	function nextSong() {
+		songIndex++;
+		if(songIndex > songArray.length - 1) {
+			songIndex = 0;
+		};
+		loadAudio();
+		playAudio();
+	}
+
+	function previousSong() {
+		songIndex--;
+		if(songIndex < 0) {
+			songIndex = songArray.length - 1;
+		};
+		loadAudio();
+		playAudio();
+	}
+
+	playPauseBtn.addEventListener('click', function() {
+		if(isPlaying) {
+			pauseAudio();
+		} else {
+			playAudio();
+		}
+	}, false);
+
+	nextBtn.addEventListener('click', function() {
+		nextSong();
+	}, false);
+
+	prevBtn.addEventListener('click', function() {
+		previousSong();
+	}, false);
+
+	songList.addEventListener('click', function(e){
+		songIndex = e.target.closest('li').getAttribute('data-index');
+		loadAudio();
+		playAudio();
+	}, false);
+
+	audio.addEventListener('ended', function() {
+		nextSong();
+	});
+
+	volSlider.addEventListener('input', function() {
+		audio.volume = volSlider.value / 100;
+	}, false);
+
+// 52:01
+// 25:19 vol. slider
+</script>
+

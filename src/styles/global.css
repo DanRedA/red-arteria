@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+    /*  font size  */
+    --step--2: clamp(0.78rem, calc(0.77rem + 0.03vw), 0.80rem);
+    --step--1: clamp(1.08rem, calc(0.92rem + 0.11vw), 1.20rem);
+    --step-0: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+    --step-1: clamp(1.35rem, calc(1.28rem + 0.37vw), 1.56rem);
+    --step-2: clamp(1.62rem, calc(1.50rem + 0.58vw), 1.95rem);
+    --step-3: clamp(1.94rem, calc(1.77rem + 0.87vw), 2.44rem);
+    --step-4: clamp(2.33rem, calc(2.08rem + 1.25vw), 3.05rem);
+    --step-5: clamp(2.80rem, calc(2.45rem + 1.77vw), 3.82rem);
+}
+
+h1 {
+    font-size: var(--step-5);
+    font-weight: 800;
+    line-height: 3rem;
+}
+h2 {
+    font-size: var(--step-4);
+    font-weight: 800;
+}
+h3 {
+    font-size: var(--step-3);
+    font-weight: 700;
+}
+h4 {
+    font-size: var(--step-2);
+    font-weight: 600;
+}
+h5 {
+    font-size: var(--step-1);
+    font-weight: 500;
+}
+h6 {
+    font-size: var(--step-0);
+    font-weight: 500;
+}
+p {
+    font-size: var(--step--1);
+}
+small {
+    font-size: var(--step--2);
+}
+
+/* colores */
+* {
+    --primary: hsl(208, 47%, 45%);
+    --primary-h: 208;
+    --primary-s: 47%;
+    --primary-l: 45%;
+
+    --secondary: hsl(356, 74%, 52%);
+    --gray: hsl(185, 14%, 64%);
+    --black-1: hsl(210, 10%, 4%);
+    --black-2: hsl(228, 8%, 13%);
+    --black-3: hsl(222, 10%, 20%);
+    --black-4: hsl(224, 9%, 24%);
+    --white-2: hsl(208 20% 99%);
+    --white-1: hsl(208 20% 92%);
+    --white-3: hsl(208 20% 85%);
+    --white-4: hsl(208 20% 78%);
+
+    /*  light theme  */
+    --brand-light: var(--primary);
+    --text1-light: var(--black-2);
+    --text2-light: var(--black-3);
+    --surf1-light: var(--white-1);
+    --surf2-light: var(--white-2);
+    --surf3-light: var(--white-3);
+    --surf4-light: var(--white-4);
+    --surf-shadow-light: var(--brand-h) 10% 20%;
+    --shadow-strength-light: .02;
+
+    /*  dark theme  */
+    --brand-dark: var(--primary);
+    --text1-dark: var(--white-2);
+    --text2-dark: var(--white-3);
+    --surf1-dark: var(--black-1);
+    --surf2-dark: var(--black-2);
+    --surf3-dark: var(--black-3);
+    --surf4-dark: var(--black-4);
+    --surf-shadow-dark: var(--brand-h) 50% 3%;
+    --shadow-strength-dark: .8;
+}
+
+:root {
+    /*  light theme auto  */
+    color-scheme: light;
+
+    --brand: var(--brand-light);
+    --text1: var(--text1-light);
+    --text2: var(--text2-light);
+    --surf1: var(--surf1-light);
+    --surf2: var(--surf2-light);
+    --surf3: var(--surf3-light);
+    --surf4: var(--surf4-light);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /*  dark theme auto */
+        color-scheme: dark;
+
+        --brand: var(--brand-dark);
+        --text1: var(--text1-dark);
+        --text2: var(--text2-dark);
+        --surf1: var(--surf1-dark);
+        --surf2: var(--surf2-dark);
+        --surf3: var(--surf3-dark);
+        --surf4: var(--surf4-dark);
+    }
+}
+
+[color-scheme="light"] {
+    color-scheme: light;
+
+    --brand: var(--brand-light);
+    --text1: var(--text1-light);
+    --text2: var(--text2-light);
+    --surf1: var(--surf1-light);
+    --surf2: var(--surf2-light);
+    --surf3: var(--surf3-light);
+    --surf4: var(--surf4-light);
+}
+
+[color-scheme="dark"] {
+    color-scheme: dark;
+
+    --brand: var(--brand-dark);
+    --text1: var(--text1-dark);
+    --text2: var(--text2-dark);
+    --surf1: var(--surf1-dark);
+    --surf2: var(--surf2-dark);
+    --surf3: var(--surf3-dark);
+    --surf4: var(--surf4-dark);
+}

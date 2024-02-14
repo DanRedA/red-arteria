@@ -1,0 +1,48 @@
+---
+export interface Props {
+	id: string;
+	title: string;
+	cover: string;
+	src: string;
+	artist: string;
+	album: string;
+	time: string;
+}
+
+const { id, title, cover, src, artist, album, time} = Astro.props;
+---
+<li class="track-item">
+	<div class="track-row">
+		<small class="track-id">{id}</small>
+		<button class="song-btn">
+			<p>{title}</p>
+			<small class="track-time">{time}</small>
+		</button>
+	</div>
+	<audio src={src} controls></audio>
+</li>
+
+<style type="text/css">
+	.track-row {
+		display: flex;
+		align-items: center;
+	}
+	.track-id, .track-time {
+		color: var(--text2);
+	}
+	.song-btn {
+		width: 100%;
+		padding: .5rem;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.song-btn p {
+		cursor: pointer;
+	}
+	.song-btn p:hover {
+		font-weight: bold;
+		color: var(--primary);
+	}
+</style>

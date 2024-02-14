@@ -1,0 +1,24 @@
+---
+export const prerender = true;
+
+import MainLayout from '../layouts/MainLayout.astro';
+// import LogoSVG from '../components/LogoSVG.astro';
+import Player from '../components/player/Player.astro';
+---
+
+<MainLayout title = 'Red Arteria | Inicio'>
+	<section>
+		<!-- <LogoSVG /> -->
+		<!-- <h3>Bienvenidos a la Red...</h3> -->
+		<!-- <p>Estamos en construcción... Si!!!</p> -->
+		<Player />
+	</section>
+</MainLayout>
+
+<style>
+	section {
+		padding: 1rem 2rem 0 1rem;
+	}
+</style>
+
+

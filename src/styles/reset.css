@@ -1,0 +1,99 @@
+/* reset margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+/* images and media */
+img, picture, video, iframe, figure {
+  max-width: 100%;
+/*  width: 100%;*/
+  display: block;
+  /* optional */
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* optional */
+  -o-object-position: center center;
+     object-position: center center;
+}
+
+/* reset anchor tags to boxes */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* anchors inside paragraphs as inline */
+p a {
+  display: inline;
+}
+
+/* unstyle list items */
+li {
+  list-style-type: none;
+}
+
+/* smooth auto scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* reset text tags */
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* reset quote's pseudo elements */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* configure selected text */
+::-moz-selection {
+  background-color: #818181;
+  color: #f0f0f0;
+}
+::selection {
+  background-color: #818181;
+  color: #f0f0f0;
+}
+
+/* normalize forms */
+form, input, textarea, select, button, label {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  /* opcional */
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+/* reset tables */
+table, tr, td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* resolve svg problems */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
