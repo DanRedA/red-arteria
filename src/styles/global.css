@@ -49,26 +49,27 @@ small {
 
 /* colores */
 * {
-    --primary: hsl(208, 47%, 45%);
-    --primary-h: 208;
-    --primary-s: 47%;
-    --primary-l: 45%;
+    --primary: hsl(207, 35%, 50%);
+    --primary-h: 207;
+    --primary-s: 35%;
+    --primary-l: 50%;
 
     --secondary: hsl(356, 74%, 52%);
-    --gray: hsl(185, 14%, 64%);
-    --black-1: hsl(210, 10%, 4%);
-    --black-2: hsl(228, 8%, 13%);
-    --black-3: hsl(222, 10%, 20%);
-    --black-4: hsl(224, 9%, 24%);
-    --white-2: hsl(208 20% 99%);
-    --white-1: hsl(208 20% 92%);
-    --white-3: hsl(208 20% 85%);
-    --white-4: hsl(208 20% 78%);
+
+    --gray: hsl(14, 6%, 60%);
+    --black-1: hsl(12, 8%, 12%);
+    --black-2: hsl(10, 8%, 15%);
+    --black-3: hsl(10, 7%, 17%);
+    --black-4: hsl(20, 6%, 21%);
+    --white-1: hsl(0 0% 100%);
+    --white-2: hsl(42, 25%, 90%);
+    --white-3: hsl(42 25% 80%);
+    --white-4: hsl(42 25% 70%);
 
     /*  light theme  */
     --brand-light: var(--primary);
     --text1-light: var(--black-2);
-    --text2-light: var(--black-3);
+    --text2-light: var(--gray);
     --surf1-light: var(--white-1);
     --surf2-light: var(--white-2);
     --surf3-light: var(--white-3);
@@ -78,8 +79,8 @@ small {
 
     /*  dark theme  */
     --brand-dark: var(--primary);
-    --text1-dark: var(--white-2);
-    --text2-dark: var(--white-3);
+    --text1-dark: var(--white-1);
+    --text2-dark: var(--white-2);
     --surf1-dark: var(--black-1);
     --surf2-dark: var(--black-2);
     --surf3-dark: var(--black-3);
@@ -89,30 +90,30 @@ small {
 }
 
 :root {
-    /*  light theme auto  */
-    color-scheme: light;
+    /*  dark theme auto  */
+    color-scheme: dark;
 
-    --brand: var(--brand-light);
-    --text1: var(--text1-light);
-    --text2: var(--text2-light);
-    --surf1: var(--surf1-light);
-    --surf2: var(--surf2-light);
-    --surf3: var(--surf3-light);
-    --surf4: var(--surf4-light);
+    --brand: var(--brand-dark);
+    --text1: var(--text1-dark);
+    --text2: var(--text2-dark);
+    --surf1: var(--surf1-dark);
+    --surf2: var(--surf2-dark);
+    --surf3: var(--surf3-dark);
+    --surf4: var(--surf4-dark);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
     :root {
-        /*  dark theme auto */
-        color-scheme: dark;
+        /*  light theme auto */
+        color-scheme: light;
 
-        --brand: var(--brand-dark);
-        --text1: var(--text1-dark);
-        --text2: var(--text2-dark);
-        --surf1: var(--surf1-dark);
-        --surf2: var(--surf2-dark);
-        --surf3: var(--surf3-dark);
-        --surf4: var(--surf4-dark);
+        --brand: var(--brand-light);
+        --text1: var(--text1-light);
+        --text2: var(--text2-light);
+        --surf1: var(--surf1-light);
+        --surf2: var(--surf2-light);
+        --surf3: var(--surf3-light);
+        --surf4: var(--surf4-light);
     }
 }
 
