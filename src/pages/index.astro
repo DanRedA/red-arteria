@@ -2,23 +2,309 @@
 export const prerender = true;
 
 import MainLayout from '../layouts/MainLayout.astro';
-// import LogoSVG from '../components/LogoSVG.astro';
+import VidMask from '../components/VidMask.astro';
 import Player from '../components/player/Player.astro';
+import Email from '../components/icons/Email.astro';
+import Whats from '../components/icons/Whats.astro';
+import Instagram from '../components/icons/Instagram.astro';
+import Facebook from '../components/icons/Facebook.astro';
 ---
 
 <MainLayout title = 'Red Arteria | Inicio'>
-	<section>
-		<!-- <LogoSVG /> -->
-		<!-- <h3>Bienvenidos a la Red...</h3> -->
-		<!-- <p>Estamos en construcción... Si!!!</p> -->
-		<Player />
-	</section>
+	<div class="wrapper">
+		<div class="player">
+			<div class="pl-header">
+				<a href="/" class="pl-header-logo">red arteria</a>
+			</div>
+			<Player />
+			<div class="pl-contacto">
+				<div class="pl-contacto-header">
+					<h5 class="pl-contacto-title">CONTACTO</h5>
+				</div>
+				<div class="pl-contacto-item">
+					<Email />
+					<a href="mailto:redarteria19@gmail.com">envíanos un correo, click aquí</a>
+				</div>
+				<div class="pl-contacto-item">
+					<Whats />
+					<p>whatsapp: 5573941575</p>
+				</div>
+				<div class="pl-contacto-item">
+					<Instagram />
+					<a href="https://www.instagram.com/red_arteria/?hl=en">@red_arteria</a>
+				</div>
+				<div class="pl-contacto-item">
+					<Facebook />
+					<a href="mailto:redarteria19@gmail.com">envíanos un correo, click aquí</a>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<div class="content-header">
+				<h5 class="content-title">  ROCK/MÉXICO</h5>
+			</div>
+			<section id="vid-mask" class="section">
+				<VidMask />
+			</section>
+			<section id="shows" class="section">
+				<h2 class="section-header">PRÓXIMOS SHOWS</h2>
+				<div class="next-show">
+					<div class="ns-card">
+						<div class="ns-c-img">
+							<img src="/shows/240328-la-piedad.jpg"  alt="music mingle en la piedad, 28 de marzo">
+						</div>
+						<div class="ns-c-data">
+							<h4 class="ns-c-title content-title">music mingle</h4>
+							<h5 class="ns-c-fecha">28 de marzo, 8pm.</h5>
+							<h5>La Piedad</h5>
+							<p>Insurgentes Sur 585, CDMX.</p>
+							<small>no cover, 18+</small>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="bio" class="section">
+				<h2 class="section-header">NOSOTROS</h2>
+				<div class="bio">
+
+					<div class="bio-texto">
+						<h4 class="ns-c-title content-title">biografía</h4>
+						<p>Somos una banda de la Ciudad de México y principalmente tocamos Rock Progresivo/Alternativo. Como referencia podríamos apuntar a bandas como Faith no More, Rush, Tool, Black Sabath. Instrumentación clásica: dos guitarras, en ocasiones agresivas, en ocasiones dulces, pero siempre dialogando sobre una base fuerte de bajo y batería. Los temas de nuestras canciones pueden llegar a ser un poco melosos, si; tratan de amor, desamor, fe y esperanza.</p>
+						<p>Como pasa con muchos grupos en la Ciudad de México, hemos tenido muchos momentos y con cada intento de concretar el proyecto hemos acumulado varias canciones que siguen estando con nosotros y que pensamos que están listas para cobrar vida de verdad. Es cierto que llevamos varios años compartiendo la experiencia de tocar juntos, pero en mi opinión el verdadero nacimiento de la banda fue a principios de 2023 cuando coincidimos en una sesión quienes ahora integramos el grupo: Dak, Agustín, Armando y yo, Dan; en esa ocasión vimos algunos destellos de lo que podríamos llegar a concretar si nos decidíamos a trabajar juntos con dedicación.</p>
+						<p>¿Y qué ha pasado desde entonces? Bueno, un paso a la vez: Tenemos montadas unas cuantas canciones que nos dan espacio para expresarnos como individuos y como banda. Terminamos de grabar y producir un material que nos da idea de cómo podemos hacer sonar nuestra música. En estos momentos tenemos la intención de seguir trabajando, seguir aprendiendo y seguir haciendo música que disfrutemos y que podamos compartir con el público y tal vez llegar a transmitirle a alguien las emociones que nos provoca vivir.</p>
+					</div>
+					<div class="bio-img">
+						<img src="/fotos/bio01.jpg" alt="foto de la banda">
+						<h4 class="ns-c-title content-title">nosotros</h4>
+						<ul>
+							<li>Dan - Bajo/Voz</li>
+							<li>Dak - Guitarra</li>
+							<li>Agus - Guitarra</li>
+							<li>Armando - Batería</li>
+						</ul>
+					</div>
+					
+				</div>
+			</section>
+			
+		</div>
+		
+	</div>
 </MainLayout>
 
 <style>
-	section {
-		padding: 1rem 2rem 0 1rem;
+	body {
 	}
+	.wrapper {
+		display: flex;
+		flex-direction: row;
+/*		border: 1px solid green;*/
+		flex-wrap: wrap;
+		height: 100%;
+
+	}
+
+	.player {
+/*		min-width: 440px;*/
+		padding: 2rem 2rem 0 2rem;
+		margin: 0 auto;
+/*		border: 1px solid gray;*/
+
+		flex-basis: 450px;
+		flex-grow: 1;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+/*		justify-content: center;*/
+	}
+	.pl-header-logo {
+		font-size: 2.3rem;
+		letter-spacing: 1.06rem;
+		font-family: CocoBiker;
+		transform: translateX(10px);
+		color: var(--primary);
+		margin-bottom: 0.7rem;
+	}
+	.pl-contacto {
+		text-align: center;
+		padding-bottom: 2rem;
+		margin-bottom: 1rem;
+		border-bottom: 1px solid var(--primary);
+	}
+	.pl-contacto-header {
+		margin: 2rem auto;
+	}
+	.pl-contacto-title {
+		color: var(--primary);
+		letter-spacing: 1.5rem;
+		transform: translateX(10px);
+	}
+	.pl-contacto-item {
+		display: flex;
+/*		width: 100%;*/
+/*		flex-grow: 1;*/
+		justify-content: space-between;
+		align-items: center;
+		margin: .5rem;
+/*		border: 1px solid gray;*/
+	}
+	.pl-contacto-item svg {
+		width: 32px;
+	}
+	.content {
+/*		height: 100vh;*/
+		width: 100%;
+/*		overflow: scroll;*/
+		padding: 2rem 1rem 2rem 2rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+/*		border: 1px solid steelblue;*/
+		
+		flex-basis: 0;
+		flex-grow: 999;
+		min-width: 60%;
+	}
+	.content-title {
+		letter-spacing: 1.3rem;
+		transform: translateX(10px);
+		width: 80%;
+		margin-bottom: 2rem;
+		text-transform: uppercase;
+	}
+	.section {
+		width: 100%;
+		min-height: 40vh;
+		text-align: center;
+		margin: 1.5rem 0 1rem 0;
+		padding: 2rem;
+		border: 1px solid gray;
+/*		border-radius: 4px;*/
+/*		background: #000;*/
+	}
+	.section-header {
+		font-size: 1.5rem;
+		font-weight: 400;
+		letter-spacing: 1rem;
+/*		border: 1px solid gray;*/
+	}
+	#vid-mask {
+		min-height: 80px;
+		margin: 0 0 1rem 0;
+		border: 1px solid gray;
+		background: #000;
+	}
+
+	.next-show {
+		max-width: 1200px;
+		margin: 2rem auto;
+/*		border: 1px solid steelblue;*/
+	}
+	.ns-card {
+		display: flex;
+		flex-wrap: wrap;
+		gap: .5rem;
+/*		flex-direction: column;*/
+	}
+	.ns-c-img {
+		border: 1px solid gray;
+		flex-basis: 360px;
+		flex-grow: 1;
+	}
+	.ns-c-data {
+		border: 1px solid gray;
+		flex-basis: 0;
+		flex-grow: 999;
+		min-width: 60%;
+		padding: 2rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.ns-c-title {
+		min-width: 300px;
+	}
+	.ns-c-fecha {
+		margin-bottom: 1rem;
+	}
+	.bio {
+		margin-top: 2rem;
+		text-align: left;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 3rem;
+/*		border: 1px solid gray;*/
+	}
+	.bio-img {
+		flex-basis: 400px;
+		flex-grow: 1;
+		min-width: 300px;
+	}
+	.bio-img h4 {
+		font-size: 1.5rem;
+		transform: translateX(0px);
+		width: 100%;
+/*		border: 1px solid gray;*/
+	}
+	.bio-texto {
+		flex-basis: 0;
+		flex-grow: 999;
+		min-width: 60%;
+/*		border: 1px solid steelblue;*/
+	}
+	.bio-texto h4 {
+		font-size: 1.5rem;
+		transform: translateX(0px);
+		width: 100%;
+		margin: 2rem 0 1rem 0;
+/*		border: 1px solid gray;*/
+	}
+	.bio-texto img {
+		margin-bottom: 1rem;
+/*		border: 1px solid gray;*/
+	}
+	.bio-texto p {
+		text-align: left;
+		margin-bottom: 1rem;
+	}
+
+/*	media queries	*/
+@media screen and (min-width: 700px) {
+	.section {
+		min-height: 70vh;
+	}
+	.section-header {
+		font-size: 2.5rem;
+		font-weight: 400;
+		letter-spacing: 2rem;
+	}
+}
+@media screen and (min-width: 1120px) {
+	.player {
+		height: 100%;
+		position: fixed;
+		overflow: auto;
+		scrollbar-width: none;
+	}
+	.player::-webkit-scrollbar {
+		display: none;
+	}
+	.content {
+		margin-left: 450px;
+		padding: 2rem 1rem 2rem 0;
+	}
+	#vid-mask {
+		height: 50vh;
+	}
+}
+@media screen and (min-width: 1560px) {
+	#vid-mask {
+		height: 70vh;
+	}
+}
 </style>
 
 
