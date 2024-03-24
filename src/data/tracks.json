@@ -2,6 +2,16 @@
 	{
 		"index": "0",
 		"id": "01",
+		"title": "Sandalias de Madera",
+		"cover": "/covers/curvas-cover.jpg",
+		"src": "https://frentelocal.com/wp-content/uploads/2024/03/1.-Sandalias-Master-.mp3",
+		"artist": "Red Arteria",
+		"album": "Curvas de Luz ep. 2024",
+		"time": "3:55"
+	},
+	{
+		"index": "1",
+		"id": "02",
 		"title": "Curvas de Luz",
 		"cover": "/covers/curvas-cover.jpg",
 		"src": "https://frentelocal.com/wp-content/uploads/2024/02/Curvas-de-luz-Master.mp3",
@@ -10,8 +20,8 @@
 		"time": "3:55"
 	},
 	{
-		"index": "1",
-		"id": "02",
+		"index": "2",
+		"id": "03",
 		"title": "Zero",
 		"cover": "/covers/curvas-cover.jpg",
 		"src": "https://frentelocal.com/wp-content/uploads/2024/02/Zero-Master.mp3",
